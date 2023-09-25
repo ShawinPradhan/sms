@@ -1,0 +1,19 @@
+.navbar-expand
+{
+    background-color: #040D12 ;
+}
+
+a{
+    color:aliceblue;
+}
+
+h4{
+    font-weight: bold;
+    font-size: xx-large;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+a:hover{
+    color: lawngreen;
+}

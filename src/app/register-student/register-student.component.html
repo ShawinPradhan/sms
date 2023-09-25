@@ -1,0 +1,66 @@
+<div class="col-md-6 offset-md-3" style="padding-top: 30px;">
+    <div class="card card-container">
+
+        <h3 class="text-center" style="padding-top: 10px;">Register Student</h3>
+        <div class="container" style="max-width: 70%; margin-bottom: 30px;">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Name: </label>
+                    <input type="text" name="stdName" class="form-control" [(ngModel)]="student.name">
+                </div>
+
+                <div class="form-group">
+                    <label>Email: </label>
+                    <input type="text" name="stdEmail" class="form-control" [(ngModel)]="student.email">
+                </div>
+
+                <div class="form-group">
+                    <label>Contact: </label>
+                    <input type="tel" name="stdContact" class="form-control" [(ngModel)]="student.contact">
+                </div>
+
+                <div class="form-group">
+                    <label>Date Of Birth: </label>
+                    <input type="date" name="dob" class="form-control" [(ngModel)]="student.dateOfBirth">
+                </div>
+
+                <div class="form-group">
+                    <label>Date Of Joining: </label>
+                    <input type="date" name="doj" class="form-control" [(ngModel)]="student.dateOfJoining">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender: </label>
+                    <label style="margin-left: 15px;">Male </label>
+                    <input type="radio" name="maleGender"  [(ngModel)]="student.gender" value="Male">
+                    <label style="margin-left: 15px;">Female </label>
+                    <input type="radio" name="femaleGender"  [(ngModel)]="student.gender" value="Female">
+                    <label style="margin-left: 15px;">Others </label>
+                    <input type="radio" name="otherGender"  [(ngModel)]="student.gender" value="Others">
+                </div>
+
+                <div class="form-group">
+                    <label>Location: </label>
+                    <input type="text" name="location" class="form-control" 
+                    [(ngModel)]="student.address.location">
+                </div>
+
+                <div class="form-group">
+                    <label>State: </label>
+                    <input type="text" name="location" class="form-control" 
+                    [(ngModel)]="student.address.state">
+                </div>
+
+                <div class="form-group">
+                    <label>Pin Code: </label>
+                    <input type="tel" name="location" class="form-control" 
+                    [(ngModel)]="student.address.pincode">
+                </div>
+
+                <br>
+                <button class="btn btn-success" type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
