@@ -22,7 +22,11 @@ export class RegisterStudentComponent {
       phone: new FormControl("",[Validators.required, Validators.minLength(10), Validators.maxLength(10), 
       Validators.pattern('[6789][0-9]{9}')]),
       dob: new FormControl("",[Validators.required]),
-      doj: new FormControl("",[Validators.required])
+      doj: new FormControl("",[Validators.required]),
+      gender: new FormControl("",[Validators.required]),
+      local: new FormControl("",[Validators.required]),
+      state: new FormControl("",[Validators.required]),
+      pin : new FormControl("",[Validators.required])
     }
   );
 

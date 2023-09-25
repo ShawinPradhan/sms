@@ -96,30 +96,57 @@
                 <div class="form-group">
                     <label>Gender: </label>
                     <label style="margin-left: 15px;">Male </label>
-                    <input type="radio" name="maleGender"  [(ngModel)]="student.gender" value="Male">
+                    <input type="radio" name="gender"  [(ngModel)]="student.gender" value="Male" formControlName="gender">
                     <label style="margin-left: 15px;">Female </label>
-                    <input type="radio" name="femaleGender"  [(ngModel)]="student.gender" value="Female">
+                    <input type="radio" name="gender"  [(ngModel)]="student.gender" value="Female">
                     <label style="margin-left: 15px;">Others </label>
-                    <input type="radio" name="otherGender"  [(ngModel)]="student.gender" value="Others">
+                    <input type="radio" name="gender"  [(ngModel)]="student.gender" value="Others">
                 </div>
+
+                <div *ngIf="f['gender'].touched && f['gender'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['gender'].errors && f['gender'].errors['required']">
+                       Gender is required**
+                    </div>
+                </div>
+
+
 
                 <div class="form-group">
                     <label>Location: </label>
                     <input type="text" name="location" class="form-control" 
-                    [(ngModel)]="student.address.location">
+                    [(ngModel)]="student.address.location" formControlName="local">
+                </div>
+
+                <div *ngIf="f['local'].touched && f['local'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['local'].errors && f['local'].errors['required']">
+                       Localtion is required**
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label>State: </label>
                     <input type="text" name="location" class="form-control" 
-                    [(ngModel)]="student.address.state">
+                    [(ngModel)]="student.address.state" formControlName="state">
+                </div>
+
+                <div *ngIf="f['state'].touched && f['state'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['state'].errors && f['state'].errors['required']">
+                       State is required**
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label>Pin Code: </label>
                     <input type="tel" name="location" class="form-control" 
-                    [(ngModel)]="student.address.pincode">
+                    [(ngModel)]="student.address.pincode" formControlName="pin">
                 </div>
+
+                <div *ngIf="f['pin'].touched && f['pin'].invalid" class="alert alter-danger">
+                    <div *ngIf="f['pin'].errors && f['pin'].errors['required']">
+                       Pin Code is required**
+                    </div>
+                </div>
+
 
                 <br>
                 <button class="btn btn-success" type="submit">Submit</button>
