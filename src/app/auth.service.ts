@@ -22,4 +22,19 @@ export class AuthService {
   {
     return this.http.post<any>(STUDENT_API+'saveStudent', student);
   }
+
+  updateStudent(id: number, student: Student): Observable<Object>
+  {
+    return this.http.put(`${STUDENT_API}`+'updateStudent/'+`${id}`, student);
+  }
+
+  getStudenById(id: number): Observable<Student>
+  {
+    return this.http.get<Student>(`${STUDENT_API}`+'getStudentById/'+`${id}`);
+  }
+
+  deleteStdById(id: number): Observable<Object>
+  {
+    return this.http.delete(`${STUDENT_API}`+'deleteStdById/'+`${id}`);
+  }
 }

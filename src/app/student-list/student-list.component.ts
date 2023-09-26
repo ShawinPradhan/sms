@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -9,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class StudentListComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   students: Student[] | undefined;
 
@@ -26,6 +27,21 @@ export class StudentListComponent implements OnInit {
     );
   }
 
+  updateStd(id: number)
+  {
+    this.router.navigate(['updateStd',id]);
+  }
 
+  deleteStd(id: number)
+  {
+    this.authService.deleteStdById(id).subscribe(
+      data=>
+      {
+        console.log(data);
+        alert("Student with id "+id+" has been deleted!");
+        window.location.reload();
+      }
+    );
+  }
 
 }
